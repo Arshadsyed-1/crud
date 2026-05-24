@@ -4,7 +4,7 @@ import streamlit as st
 import requests
 import pandas as pd
 
-server_location = "http://127.0.0.1:8000"
+server_location = st.secrets["SERVER_URL"]
 
 st.title("CRUD OPERATION USING THE API")
 
