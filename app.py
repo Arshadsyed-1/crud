@@ -32,7 +32,7 @@ elif opt == "view_employee":
     st.dataframe(df)
 elif opt == "Update_employee":
     st.header("Update Employee")
-    employee_id = st.text_input("Employee ID",min_value=1)
+    employee_id = st.number_input("Employee ID",min_value=1)
     name = st.text_input("new_Name")
     email = st.text_input("new_Email")
     dept = st.selectbox("new_Department", options=[" ", "dev", "tester", "HR", "IT", "Finance", "Marketing"])
