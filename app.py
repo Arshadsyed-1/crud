@@ -36,7 +36,7 @@ elif opt == "Update_employee":
     name = st.text_input("new_Name")
     email = st.text_input("new_Email")
     dept = st.selectbox("new_Department", options=[" ", "dev", "tester", "HR", "IT", "Finance", "Marketing"])
-    btn = st.form_submit_button("Update")
+    btn = st.button("Update")
     if btn:
         new_data = {"n": name, "e": email, "d": dept}
         response = requests.put(f"{server_location}/employees/{employee_id}", json=new_data)
@@ -44,7 +44,7 @@ elif opt == "Update_employee":
 elif opt == "Delete_employee":
     st.header("Delete Employee")
     employee_id = st.number_input("Employee ID", min_value=1)
-    btn = st.form_submit_button("Delete")
+    btn = st.button("Delete")
     if btn:
         response = requests.delete(f"{server_location}/employees/{employee_id}")
         st.write(response.json())
