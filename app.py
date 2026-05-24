@@ -21,7 +21,7 @@ if opt == "add_employee":
         if btn:
             new_data = {"n": name, "e": email, "d": dept}
             response = requests.post(f"{server_location}/employees", json=new_data)
-            st.success(response.json()["msg"])
+            st.success(response.json()["message"])
 
                                                        
 elif opt == "view_employee":
@@ -40,11 +40,14 @@ elif opt == "Update_employee":
     if btn:
         new_data = {"n": name, "e": email, "d": dept}
         response = requests.put(f"{server_location}/employees/{employee_id}", json=new_data)
-        st.success(response.json()["msg"])
+        st.success(response.json()["message"])
 elif opt == "Delete_employee":
     st.header("Delete Employee")
     employee_id = st.number_input("Employee ID", min_value=1)
     btn = st.form_submit_button("Delete")
     if btn:
         response = requests.delete(f"{server_location}/employees/{employee_id}")
-        st.success(response.json()["msg"])
+        st.success(response.json()["message"])
+
+
+        
