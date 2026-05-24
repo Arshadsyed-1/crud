@@ -21,7 +21,7 @@ if opt == "add_employee":
         if btn:
             new_data = {"n": name, "e": email, "d": dept}
             response = requests.post(f"{server_location}/employees", json=new_data)
-            st.success(response.json()["message"])
+            st.write(response.json())
 
                                                        
 elif opt == "view_employee":
